@@ -1,0 +1,36 @@
+{
+  "name": "herro",
+  "version": "0.0.0",
+  "description": "humanize the error class",
+  "author": "Javier Carrillo <stringparser@gmail.com> (http://www.stringparser.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stringparser/herro"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "make test"
+  },
+  "keywords": [
+    "gulp",
+    "gulpplugin",
+    "runtime",
+    "stdin",
+    "readline",
+    "terminal",
+    "interface",
+    "tool"
+  ],
+  "dependencies": {
+    "callsite": "^1.0.0",
+    "chalk": "^0.5.1",
+    "gulp": "~3.8.6",
+    "gulp-util": "~2.2.20",
+    "minimist": "~0.2.0",
+    "utils-merge": "~1.0.0"
+  },
+  "devDependencies": {
+    "should": "~4.0.4"
+  },
+  "license": "MIT"
+}
