@@ -3,20 +3,16 @@
   "version": "0.0.1",
   "description": "humanize the error class",
   "author": "Javier Carrillo <stringparser@gmail.com> (http://www.stringparser.com)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stringparser/herro"
-  },
   "scripts": {
     "start": "node index.js",
     "test": "make test"
   },
-  "keywords": [
-    "error"
-  ],
-  "dependencies": {
-
-  "devDependencies": {
-  },
-  "license": "MIT"
+  "keywords": ["error"],
+  "dependencies": { },
+  "devDependencies": { },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stringparser/herro"
+  }
 }
