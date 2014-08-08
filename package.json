@@ -7,9 +7,13 @@
     "start": "node index.js",
     "test": "make test"
   },
-  "keywords": ["error"],
-  "dependencies": { },
-  "devDependencies": { },
+  "keywords": [
+    "error"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.7"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
