@@ -77,7 +77,7 @@ throw new Error('Hello sequencify!')
  node@0.10.30
 ```
 
-Another using [runtime](../../runtime)
+Another using [runtime](../../../runtime)
 
 ```js
 module.js:340
