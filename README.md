@@ -1,5 +1,4 @@
-## Don't clone this repo
-
+## This is an experiment so far
 
 The aim of this project is to humanize stack traces writing package's versions and names directly on the table to save up time and effort.
 
