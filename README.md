@@ -2,7 +2,7 @@
 
 First results on this.
 
-The code should give two flavors: one that uses `Error.prepareStackTrace` so you can enforce *any* stack trace to look like you want and a more responsible one that only uses this kind of stacks, where `instead` of inheriting from `Error`, you inherit from `Herror`.
+The code should give two flavors: one that uses `Error.prepareStackTrace` so you can enforce *any* (v8) stack trace to look like you want and a more responsible one that only uses this kind of stacks, where `instead` of inheriting from `Error`, you inherit from `Herror`.
 
 What I have so far.
 
