@@ -1,4 +1,2 @@
 
-require('herro')
-
-var gulp = require('gulp')
+require('herro').everywhere();
