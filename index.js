@@ -1,1 +1,1 @@
-module.exports = require('./herro');
+module.exports = require('./herro').everywhere();
