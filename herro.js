@@ -2,13 +2,12 @@
 var fs = require('fs');
 var path = require('path');
 var util = require('util');
-var merge = require('utils-merge');
 
 var local = {
   path : path.resolve('.')
 };
 
-merge(local, {
+util._extend(local, {
   module : require( path.resolve(local.path, 'package.json') ),
     node : 'node@' + process.versions.node,
    regex : new RegExp(local.path, 'g')

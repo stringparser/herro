@@ -3,19 +3,14 @@
   "version": "0.0.2",
   "description": "humanize the error class",
   "author": "Javier Carrillo <stringparser@gmail.com> (http://www.stringparser.com)",
+  "main" : "./index.js",
   "scripts": {
-    "start": "node test/index.js",
-    "test": "make test"
+    "start" : "npm run-script err && node index.js",
+    "err": "echo 'throw new Error(\"Hey there!\")' >> node_modules/gulp/node_modules/orchestrator/node_modules/sequencify/index.js && node index.js"
   },
   "keywords": [
     "error"
   ],
-  "dependencies": {
-    "utils-merge": "^1.0.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.8.7"
-  },
   "license": "MIT",
   "repository": {
     "type": "git",
