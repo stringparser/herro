@@ -4,7 +4,7 @@ First results on this.
 
 The code should give two flavors: one that uses `Error.prepareStackTrace` so you can enforce *any* (v8) stack trace to look like you want and a more responsible one that only uses this kind of stacks, where `instead` of inheriting from `Error`, you inherit from `Herror`.
 
-What I have so far.
+What I have so far (I've picked `gulp`for testing just because I'm doing stuff with gulp at the moment).
 
 Say you have this stack:
 ```js
