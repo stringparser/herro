@@ -1,4 +1,4 @@
-## Just started the project, don't clone this repo
+## Humanize the `Error` class
 
 First results on this.
 
