@@ -37,6 +37,8 @@ util.inherits(Herror, Error);
 
 var fileName = /\((.*node_modules.*)\)/g;
 var moduleName = /node_modules.\w+(\-\w+|\.\w+|)/g;
+var moduleFormat = /\w+(.\w+|-\w+|)@\d+(.\d+){2}/;
+var sourceFormat = /\((.*\w+(.\w+|-\w+|)@\d+(.\d+){2}.*)\)/;
 function humanize(stack){
 
   var source = '';
@@ -66,13 +68,11 @@ function humanize(stack){
       }
     })
 
-    if(matches == 0){
-      source = pack[$1.match(moduleName).join('/')];
-    }
-
-    matches++;
     return ret;
-  }).replace('<source>', source);
+  }).replace(local.regex, local.badge)
+    .replace('<source>', function($0, $1, $2){
+      return $2.match(sourceFormat)[1];
+  });
 }
 
 /*
