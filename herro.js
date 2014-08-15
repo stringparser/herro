@@ -38,7 +38,7 @@ util.inherits(Herror, Error);
 var fileName = /\((.*node_modules.*)\)/g;
 var moduleName = /node_modules.\w+(\-\w+|\.\w+|)/g;
 var moduleFormat = /\w+(.\w+|-\w+|)@\d+(.\d+){2}/;
-var sourceFormat = /\((.*\w+(.\w+|-\w+|)@\d+(.\d+){2}.*)\)/;
+var sourceFormat = /\((.*@.*\)/;
 function humanize(stack){
 
   var source = '';
