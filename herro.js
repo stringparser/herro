@@ -20,22 +20,9 @@ function Herror(){
 
   this.message = arguments[0];
 
-  this.stack = Array.isArray(this.stack)
-   ? this.stack
-   : this.stack.split(/\n[ ]+at[ ]+/)
-
-  this.stack = this.stack.join('\n    at  ');
-
   this.stack = humanize(
-
-    ' ' + this.name + ': ' + this.message
-    + '\n\n source: <source> '
-    + '\n -- \n start  '
-    + this.stack
-    + '\n -- \n '
-    + local.node + '\n'
-
-  ).replace(local.path, local.badge);
+    format(this, this.stack)
+  );
 }
 util.inherits(Herror, Error);
 
@@ -109,18 +96,31 @@ function humanize(stack){
  *
  */
 
-exports.everywhere = function(){
+function format(error, stack){
 
-  Error.prepareStackTrace = function(error, stack){
+  stack = Array.isArray(stack)
+   ? stack
+   : stack.split(/\n[ ]+at[ ]+/);
 
-    return humanize(
-      ' ' + error.name + ': ' + error.message
+  return (
+  ' ' + error.name + ': ' + error.message
       + '\n\n source: <source> '
       + '\n -- \n start  '
       + stack.join('\n    at  ')
       + '\n -- \n '
       + local.arch + '\n'
-    )
+  );
+}
+
+/*
+ *
+ */
+
+exports.everywhere = function(){
+
+  Error.prepareStackTrace = function(error, stack){
+
+    return humanize( format(error, stack) );
   }
 
   Error.stackTraceLimit = Infinity;
