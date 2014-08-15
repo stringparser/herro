@@ -4,7 +4,6 @@
  */
 
 var path = require('path'),
-    util = require('util'),
     pack = require(path.resolve('.', 'package'));
 
 

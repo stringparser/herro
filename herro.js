@@ -39,12 +39,17 @@ function Herror(){
 }
 util.inherits(Herror, Error);
 
+/*
+ * Simple regexes to have a nice day
+ */
 
 var fileName = /\((.*node_modules.*)\)/;
 var moduleName = /node_modules.\w+(\-\w+|\.\w+|)/g;
-var moduleFormat = /\w+(.\w+|-\w+|)@\d+(.\d+){2}/;
 var sourceFormat = /\((.*@.*)\)/;
+
+
 var map = {};
+
 function humanize(stack){
 
   var file = stack.match(fileName)[1];
@@ -87,9 +92,11 @@ function humanize(stack){
   if(file !== null)
     humanize(stack);
   else {
+
+    // mark the first package path
     return stack.replace(/.*@.*/, function($0){
-                  return $0.replace(/\w+/, '    >');
-                }).replace(local.path, local.badge);
+      return $0.replace(/\w+/, '    >');
+    }).replace(local.path, local.badge);
   }
 }
 
