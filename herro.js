@@ -80,14 +80,17 @@ function humanize(stack){
     humanize(stack);
   else {
 
-    // mark the first package path
-    stack = stack.replace(/.*@.*/, function($0){
-      return $0.replace(/\w+/, '    >');
-    }).replace(new RegExp(local.path,'g'), local.badge);
+    // We are done here
+    // replace the missing badges
+    stack = stack
+      .replace(new RegExp(local.path,'g'), local.badge)
+      .replace(/.*@.*/, function($0){
+          return $0.replace(/\w+/, '    >');
+      });
 
     return stack.replace('<source>', function(){
-      return stack.match(/\((.*@.*)\)/)[1];
-    })
+        return stack.match(/\((.*@.*)\)/)[1];
+      });
 
   }
 }
