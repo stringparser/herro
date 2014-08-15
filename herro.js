@@ -94,9 +94,14 @@ function humanize(stack){
   else {
 
     // mark the first package path
-    return stack.replace(/.*@.*/, function($0){
+    stack = stack.replace(/.*@.*/, function($0){
       return $0.replace(/\w+/, '    >');
-    }).replace(local.path, local.badge);
+    }).replace(new RegExp(local.path,'g'), local.badge);
+
+    return stack.replace('<source>', function(){
+      return stack.match(/\((.*@.*)\)/)[1];
+    })
+
   }
 }
 
@@ -110,11 +115,12 @@ exports.everywhere = function(){
 
     return humanize(
       ' ' + error.name + ': ' + error.message
+      + '\n\n source: <source> '
       + '\n -- \n start  '
       + stack.join('\n    at  ')
       + '\n -- \n '
       + local.arch + '\n'
-    ).replace(new RegExp(local.path, 'g'), local.badge);
+    )
   }
 
   Error.stackTraceLimit = Infinity;
