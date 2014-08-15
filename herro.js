@@ -1,18 +1,15 @@
 
+/*
+ * Module dependencies
+ */
+
 var fs = require('fs');
 var path = require('path');
 var util = require('util');
-
-var local = {
-  path : path.resolve('.')
-};
-
-util._extend(local, {
-  module : require( path.resolve(local.path, 'package.json') ),
-    node : 'node@' + process.versions.node,
-   regex : new RegExp(local.path, 'g')
-})
-local.badge = local.module.name + '@' + local.module.version;
+var local = require('./local');
+/*
+ *
+ */
 
 exports = module.exports = Herror;
 
@@ -23,56 +20,77 @@ function Herror(){
 
   this.message = arguments[0];
 
+  this.stack = Array.isArray(this.stack)
+   ? this.stack
+   : this.stack.split(/\n[ ]+at[ ]+/)
+
+  this.stack = this.stack.join('\n    at  ');
+
   this.stack = humanize(
-      '  Start: <source> \n '
-    + this.name + ': ' + this.message
-    + '\n -- \n from: '
-    + this.stack.replace(/.*\n[ ]+at[ ]+/, '')
+
+    ' ' + this.name + ': ' + this.message
+    + '\n\n source: <source> '
+    + '\n -- \n start  '
+    + this.stack
     + '\n -- \n '
     + local.node + '\n'
-  ).replace(local.regex, local.badge);
+
+  ).replace(local.path, local.badge);
 }
 util.inherits(Herror, Error);
 
 
-var fileName = /\((.*node_modules.*)\)/g;
+var fileName = /\((.*node_modules.*)\)/;
 var moduleName = /node_modules.\w+(\-\w+|\.\w+|)/g;
 var moduleFormat = /\w+(.\w+|-\w+|)@\d+(.\d+){2}/;
-var sourceFormat = /\((.*@.*\)/;
+var sourceFormat = /\((.*@.*)\)/;
+var map = {};
 function humanize(stack){
 
-  var source = '';
-  var matches = 0;
+  var file = stack.match(fileName)[1];
 
-  return stack.replace(fileName, function($0,$1){
+  file.match(moduleName).map(function(name, index, names){
 
-    var pack = {}
-    var file = '', prev, ret;
+    return path.resolve.apply(null, names.slice(0, index+1));
 
-    ret = $1.replace(moduleName, function($0,$1,$2,$3){
-      file = prev
-        ? file + '/' + $0
-        : $0;
+  }).map(function(name, index, names){
 
-      if(!pack[file]){
-        pack[file] = JSON.parse(
-          fs.readFileSync(
-            path.resolve('./'+file,'package.json')
-          )
-        );
+    var relative = path.relative(local.path, name);
 
-        pack[file] = pack[file].name + '@' + pack[file].version;
+    if(map[relative] === void 0){
 
-        prev = true;
-        return pack[file];
+      var json = path.resolve(name,'package.json');
+          json = fs.readFileSync(json);
+          json = JSON.parse(json);
+
+      map[relative] = json.name + '@' + json.version;
+      if(index > 0) {
+        var prev  = path.relative(local.path, names[index-1]);
+            prev  = path.resolve(map[prev], map[relative]);
+
+        map[relative] = path.relative(local.path, prev);
       }
-    })
+    }
 
-    return ret;
-  }).replace(local.regex, local.badge)
-    .replace('<source>', function($0, $1, $2){
-      return $2.match(sourceFormat)[1];
+    return map[relative];
   });
+
+  var regex = Object.keys(map).sort(function(a,b){
+    return b.length - a.length;
+  }).join('|');
+
+  stack = stack.replace(new RegExp(regex, 'g'),
+    function($0){ return map[$0]; }
+  );
+
+  file = stack.match(fileName);
+  if(file !== null)
+    humanize(stack);
+  else {
+    return stack.replace(/.*@.*/, function($0){
+                  return $0.replace(/\w+/, '    >');
+                }).replace(local.path, local.badge);
+  }
 }
 
 /*
@@ -85,13 +103,11 @@ exports.everywhere = function(){
 
     return humanize(
       ' ' + error.name + ': ' + error.message
-      + '\n\n source: <source> '
       + '\n -- \n start  '
       + stack.join('\n    at  ')
-             .replace(/[ ]+/, '\n     >  ')
       + '\n -- \n '
-      + local.node + '\n'
-    ).replace(local.regex, local.badge);
+      + local.arch + '\n'
+    ).replace(new RegExp(local.path, 'g'), local.badge);
   }
 
   Error.stackTraceLimit = Infinity;
