@@ -1,2 +1,4 @@
 
-require('herro').everywhere();
+require('../.');
+
+require('gulp')
