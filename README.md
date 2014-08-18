@@ -1,4 +1,5 @@
 ## Herro[<img alt="progressed.io" src="http://progressed.io/bar/50" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
+> Humanize the `Error` class
 
 [<img alt="build" src="http://img.shields.io/travis/stringparser/herror/master.svg?style=flat-square" align="left"/>](https://travis-ci.org/stringparser/herror/builds)
 
@@ -7,7 +8,7 @@
 [<img alt="NPM version" src="http://img.shields.io/npm/v/herror.svg?style=flat-square" align="right"/>](http://www.npmjs.org/package/herror)
 
 <br>
-> Humanize the `Error` class
+
 
 The aim of this project is to humanize stack traces writing package's versions and names directly on the table to save up time and effort.
 
