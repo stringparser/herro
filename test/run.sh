@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# taked from TJ
+# https://github.com/visionmedia/commander.js/blob/master/test/run
+
 export NODE_ENV=test
 
 echo
