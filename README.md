@@ -1,4 +1,4 @@
-## Herro[<img alt="progressed.io" src="http://progressed.io/bar/41" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
+## Herro[<img alt="progressed.io" src="http://progressed.io/bar/50" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
 [<img alt="build" src="http://img.shields.io/travis/stringparser/herror/master.svg?style=flat-square" align="left"/>](https://travis-ci.org/stringparser/herror/builds)
 
