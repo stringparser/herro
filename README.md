@@ -133,3 +133,7 @@ module.js:340
 
 make: *** [test] Error 8
 ```
+
+## license
+
+[<img alt="LICENSE" src="http://img.shields.io/npm/l/gulp-runtime.svg?style=flat-square"/>](http://opensource.org/licenses/MIT)
