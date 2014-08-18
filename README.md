@@ -16,7 +16,7 @@ The code should give two flavors: one that uses `Error.prepareStackTrace` so you
 
 <hr>
 
-Implementation status: tests and documentation coming today.
+<b>Implementation status</b>: tests and documentation coming today.
 
 What I have so far (I've picked `gulp`for testing just because I'm doing stuff with gulp at the moment).
 
