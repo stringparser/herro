@@ -1,12 +1,9 @@
-var assert = require('better-assert');
+var assert = require('assert');
 var Herror = require('../.');
 
 Herror.set('hello', function(){
   return new Error();
 });
-
-
-console.log(Herror.get('hello'));
 
 
 function catcher(fn){

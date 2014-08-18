@@ -1,5 +1,5 @@
 
-var assert = require('better-assert');
+var assert = require('assert');
 var Herror = require('../.');
 
 
@@ -22,9 +22,10 @@ assert( Error.stackTraceLimit  === 10 );
 assert( e.message === 'something went wrong');
 assert(
   catcher(function(){
-    return Herro.set();
+    return Herror.set();
   }) instanceof Error
 );
+
 
 function catcher(fn){
 
