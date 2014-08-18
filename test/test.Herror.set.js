@@ -27,9 +27,6 @@ assert(
 );
 
 
-throw Herror.set('hello', 'something');
-
-
 function catcher(fn){
 
   var ret;
