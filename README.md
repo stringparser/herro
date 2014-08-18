@@ -5,7 +5,7 @@
 [<img alt="build" src="http://img.shields.io/travis/stringparser/herro/master.svg?style=flat-square" align="right"/>](https://travis-ci.org/stringparser/herro/builds)
 
 ## Herro
-> Humanize the `Error` class[<img alt="progressed.io" src="http://progressed.io/bar/50" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
+> Humanize the `Error` class[<img alt="progressed.io" src="http://progressed.io/bar/50?title=progress" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
 <br>
 
