@@ -1,12 +1,21 @@
-## This is an experiment so far
+## Herro[<img alt="progressed.io" src="http://progressed.io/bar/41" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
+
+[<img alt="build" src="http://img.shields.io/travis/stringparser/herror/master.svg?style=flat-square" align="left"/>](https://travis-ci.org/stringparser/herror/builds)
+
+[<img alt="npm downloads" src="http://img.shields.io/npm/dm/herror.svg?style=flat-square" align="left"/>](http://img.shields.io/npm/dm/herror.svg)
+
+[<img alt="NPM version" src="http://img.shields.io/npm/v/herror.svg?style=flat-square" align="right"/>](http://www.npmjs.org/package/herror)
+
+<br>
+> Humanize the `Error` class
 
 The aim of this project is to humanize stack traces writing package's versions and names directly on the table to save up time and effort.
 
+The code should give two flavors: one that uses `Error.prepareStackTrace` so you can enforce *any* (v8) stack trace to look like you want and a more responsible one that only uses this kind of stacks, where `instead` of inheriting from `Error`, you inherit from `Herror`.
+
 <hr>
 
-First results on this.
-
-The code should give two flavors: one that uses `Error.prepareStackTrace` so you can enforce *any* (v8) stack trace to look like you want and a more responsible one that only uses this kind of stacks, where `instead` of inheriting from `Error`, you inherit from `Herror`.
+Implementation status: tests and documentation coming today.
 
 What I have so far (I've picked `gulp`for testing just because I'm doing stuff with gulp at the moment).
 

@@ -1,1 +1,1 @@
-module.exports = require('./lib/herro').everywhere();
+module.exports = require('./lib/herro');
