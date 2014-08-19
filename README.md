@@ -4,7 +4,7 @@
 
 <br>
 
-Write package's versions and names directly on the `stack` already.[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
+[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
 Say you have this stack.
 
@@ -144,7 +144,8 @@ Get the `errorClass` you set with `herro.set`
   - `message`: optional `string` message.
 
 If `message` is not given returns your errorClass `name`.
-If `message` *is* given returns an error instance of that errorClass `name`.
+
+If `message` *is* given returns an error instance of that errorClass `name` with that `message`.
 
 ## flags
 
