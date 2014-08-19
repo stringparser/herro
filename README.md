@@ -85,6 +85,68 @@ throw new myErrorClass('I would want coffee and toasts')
 
 ## api
 
+#### herro.Herror
+
+Inherits from `Error` an error class with formatted stack trace. You can call it with and without `new`.
+
+If you use `call` or `apply` it will spect you use an `Error` instance for `this`. That is:
+
+```js
+var herro = require('herro').Herror;
+var myThing = {};
+
+Herror.call(myThing)
+Herror.apply(myTHing)
+
+// Both above will throw an error
+```
+
+#### herro.set(name, handle)
+
+Set your error classes here. Chainable method.
+ - `name`: a `string` or an `object`
+ - `handle` : a `function`
+
+If `name` is a `string` then `handle` should be a function. If `handle` is not given `name` is expected to be an `object`. Sugar for this:
+
+  ```js
+    herro
+      .set('my-error', function(err){
+        err.message = ' argument `'+err.message+'` not supported';
+        return err;
+      }).set('other error', function(err){
+        err.message = ' go out and take some beers already!'
+        return err;
+      })
+
+    // the above is equivalent to
+    herro.set({
+      'my-error' : function(err){
+        err.message = ' argument `'+err.message+'` not supported';
+        return err;
+      },
+      'other error' : function(err){
+        err.message = ' go out and take some beers already!'
+        return err;
+      }
+    })
+
+  ```
+
+#### herro.get(name[, message])
+
+Get the `errorClass` you set with `herro.set`
+
+  - `name`: a `string`
+  - `message`: optional `string` message.
+
+If `message` is not given returns your errorClass `name`.
+If `message` *is* given returns an error instance of that errorClass `name`.
+
+#### FLAGS
+
+
+
 ## license
 
 [<img alt="LICENSE" src="http://img.shields.io/npm/l/gulp-runtime.svg?style=flat-square"/>](http://opensource.org/licenses/MIT)
