@@ -109,26 +109,26 @@ Set your error classes here. Chainable method.
 If `name` is a `string` then `handle` should be a function. If `handle` is not given `name` is expected to be an `object`. Sugar for this:
 
 ```js
-  herro
-    .set('my-error', function(err){
-      err.message = ' argument `'+err.message+'` not supported';
-      return err;
-    }).set('other error', function(err){
-      err.message = ' go out and take some beers already!'
-      return err;
-    })
-
-  // the above is equivalent to
-  herro.set({
-    'my-error' : function(err){
-      err.message = ' argument `'+err.message+'` not supported';
-      return err;
-    },
-    'other error' : function(err){
-      err.message = ' go out and take some beers already!'
-      return err;
-    }
+herro
+  .set('my-error', function(err){
+    err.message = ' argument `'+err.message+'` not supported';
+    return err;
+  }).set('other error', function(err){
+    err.message = ' go out and take some beers already!'
+    return err;
   })
+
+// the above is equivalent to
+herro.set({
+  'my-error' : function(err){
+    err.message = ' argument `'+err.message+'` not supported';
+    return err;
+  },
+  'other error' : function(err){
+    err.message = ' go out and take some beers already!'
+    return err;
+  }
+})
 
 ```
 
@@ -144,9 +144,19 @@ Get the `errorClass` you set with `herro.set`
 If `message` is not given returns your errorClass `name`.
 If `message` *is* given returns an error instance of that errorClass `name`.
 
-#### FLAGS
+## FLAGS
 
+Enforce all stack traces to show package versions:
 
+```sh
+export ERROR_FLOOD=true node index.js
+```
+
+Shut up all the way down
+```sh
+export NO_FLAGS node index.js
+```
+The above in case anyone left `process.env.ERROR_FLOOD = true` written somewhere.
 
 ## license
 
