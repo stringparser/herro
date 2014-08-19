@@ -43,5 +43,3 @@ herro.set('my-custom-error', function(err){
 });
 
 var myErrorClass = herro.get('my-custom-error');
-
-throw new myErrorClass('I would want coffee and toasts')
