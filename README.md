@@ -1,8 +1,11 @@
-> Humanize the `Error` class [<img alt="npm downloads" src="http://img.shields.io/npm/dm/herro.svg?style=flat-square" align="right"/>](http://img.shields.io/npm/dm/herro.svg)
-[<img alt="NPM version" src="http://img.shields.io/npm/v/herro.svg?style=flat-square" align="right"/>](http://www.npmjs.org/package/herro)
-[<img alt="build" src="http://img.shields.io/travis/stringparser/herro/master.svg?style=flat-square" align="right"/>](https://travis-ci.org/stringparser/herro/builds)
+[<img alt="NPM version" src="http://img.shields.io/npm/v/herro.svg?style=flat-square" align="left"/>](http://www.npmjs.org/package/herro)
 
+[<img alt="npm downloads" src="http://img.shields.io/npm/dm/herro.svg?style=flat-square" align="right"/>](http://img.shields.io/npm/dm/herro.svg)
+[<img alt="build" src="http://img.shields.io/travis/stringparser/herro/master.svg?style=flat-square" align="right"/>](https://travis-ci.org/stringparser/herro/builds)
 [<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
+
+
+#### Humanize the `Error` class
 
 Say you have this stack.
 
@@ -109,6 +112,8 @@ Set your error classes here. Chainable method.
 If `name` is a `string` then `handle` should be a function. If `handle` is not given `name` is expected to be an `object`. Sugar for this:
 
 ```js
+var herro = require('herro');
+
 herro
   .set('my-error', function(err){
     err.message = ' argument `'+err.message+'` not supported';
