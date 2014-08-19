@@ -24,6 +24,8 @@ What if looked like this?
 npm install herro --save
 ```
 
+Thus far [`node 0.8` and above are behaving](https://travis-ci.org/stringparser/herro/builds).
+
 ## usage
 
 Out of the package you get a plain old `Herror` class that only takes one argument (the message to be written).
