@@ -34,7 +34,7 @@ Out of the package you get a plain old `Herror` class that only takes one argume
 var Herror = require('herro').Herror;
 ```
 
-Just use it as you normally would and you would get stack traces like above.
+Just use it as you normally would with `Error` and you would get stack traces like above.
 
 Also, if you want to enforce *any* v8 stacktrace to have the package names and versions written there is a flag you can use for that
 
