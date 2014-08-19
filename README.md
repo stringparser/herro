@@ -28,7 +28,7 @@ npm install herro --save
 
 ## usage
 
-Out of the package you get a plain old `Error` class that only takes one argument (the message to be written).
+Out of the package you get a plain old `Herror` class that only takes one argument (the message to be written).
 
 ```js
 var Herror = require('herro').Herror;
