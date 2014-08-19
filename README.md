@@ -7,7 +7,7 @@
 ## herro
 > Humanize the `Error` class[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
-The aim of this project is to humanize stack traces writing package's versions and names directly on the table.
+Wrie package's versions and names directly on the `stack` already.
 
 ## example
 
