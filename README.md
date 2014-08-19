@@ -180,6 +180,12 @@ npm test
  - [ ] make more tests.
  - [ ] more interfaces for error instances (like `Herror.stream` or `Herror.catch`) that would be helpful to have.
 
+### stats
+
+[<img src="https://nodei.co/npm/herro.png?downloads=true&downloadRank=true&stars=true" alt="NPM" align="center"/>](https://nodei.co/npm/herro)
+
+[<img src="https://nodei.co/npm-dl/herro.png" alt="NPM" align="center"/>](https://nodei.co/npm/herro/)
+
 ## license
 
-[<img alt="LICENSE" src="http://img.shields.io/npm/l/gulp-runtime.svg?style=flat-square"/>](http://opensource.org/licenses/MIT)
+[<img alt="LICENSE" src="http://img.shields.io/npm/l/herro.svg?style=flat-square"/>](http://opensource.org/licenses/MIT)
