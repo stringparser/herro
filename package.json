@@ -1,6 +1,6 @@
 {
   "name": "herro",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "humanize the error class",
   "author": "Javier Carrillo <stringparser@gmail.com> (http://www.stringparser.com)",
   "main": "./index.js",
@@ -8,7 +8,13 @@
     "test": "make test"
   },
   "keywords": [
-    "error"
+    "error",
+    "errors",
+    "custom",
+    "stack",
+    "trace",
+    "stacktrace",
+    "v8"
   ],
   "license": "MIT",
   "repository": {
