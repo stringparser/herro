@@ -1,28 +1,22 @@
 
 var assert = require('assert');
-var Herror = require('../.');
+var herro = require('../.');
 
 
-Herror.set('my-errorClass', function(err, after){
+herro.set('my-errorClass', function(err){
 
-  if(after){
-    err.message = 'something ' + err.message;
-  }
-  else {
-    this.continue = true;
-  }
-
+  err.message = 'something ' + err.message;
   return err;
 });
 
-var e = new Herror.get('my-errorClass', 'went wrong');
+var e = new herro.get('my-errorClass', 'went wrong');
 
 assert( e instanceof Error );
 assert( Error.stackTraceLimit  === 10 );
 assert( e.message === 'something went wrong');
 assert(
   catcher(function(){
-    return Herror.set();
+    return herro.set();
   }) instanceof Error
 );
 
@@ -39,3 +33,15 @@ function catcher(fn){
 
   return ret;
 }
+
+herro.set('my-custom-error', function(err){
+
+  console.log('hello')
+  err.message = err.message + ' with orange juice please';
+
+  return err;
+});
+
+var myErrorClass = herro.get('my-custom-error');
+
+throw new myErrorClass('I would want coffee and toasts')
