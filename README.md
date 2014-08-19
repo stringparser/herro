@@ -15,7 +15,8 @@ Say you have this stack.
 
 [<img src="./docs/example_stack.png" alt="center"/>](https://github.com/stringparser/runtime)
 
-Why shouldn't it look like what is on the right (note that instead of `node_modules/moduleName` you see `moduleName@version`)
+What if looked like this?
+> note that instead of `node_modules/moduleName` you see `moduleName@version`
 
 [<img src="./docs/example_stack2.png" alt="center"/>](https://github.com/stringparser/runtime)
 
