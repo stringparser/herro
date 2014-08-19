@@ -39,7 +39,7 @@ Just use it as you normally would and you would get stack traces like above.
 Also, if you want to enforce *any* v8 stacktrace to have the package names and versions written there is a flag you can use for that
 
 ```sh
-export FLOOD=true node index.js
+export ERROR_FLOOD=true node index.js
 ```
 
 Besides of the simple `Herror` class there are two methods to easily customize your errors (see the [api](#api) section below).
