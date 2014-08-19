@@ -6,8 +6,6 @@
 
 Write package's versions and names directly on the `stack` already.[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
-## example
-
 Say you have this stack.
 
 [<img src="./docs/example_stack.png" align="center"/>](https://github.com/stringparser/runtime)
