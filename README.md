@@ -18,7 +18,10 @@ Say you have this stack.
 What if looked like this?
 
 [<img src="./docs/example_stack2.png" alt="center"/>](https://github.com/stringparser/runtime)
-> note that instead of `node_modules/moduleName` you see `moduleName@version`
+
+ What it was done:
+  - Change `node_modules/moduleName` with `moduleName@version`
+  - Change `my-project-path` with `my-project-path@version` (on the screenshot above [runtime@0.1.28-docs-2](https://github.com/stringparser/runtime))
 
 ## install
 
