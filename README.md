@@ -158,6 +158,18 @@ export NO_FLAGS node index.js
 ```
 The above in case anyone left `process.env.ERROR_FLOOD = true` written somewhere.
 
+## tests
+
+```sh
+make test
+```
+
+or
+
+```
+npm test
+```
+
 ## license
 
 [<img alt="LICENSE" src="http://img.shields.io/npm/l/gulp-runtime.svg?style=flat-square"/>](http://opensource.org/licenses/MIT)
