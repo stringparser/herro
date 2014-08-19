@@ -36,7 +36,6 @@ function catcher(fn){
 
 herro.set('my-custom-error', function(err){
 
-  console.log('hello')
   err.message = err.message + ' with orange juice please';
 
   return err;
