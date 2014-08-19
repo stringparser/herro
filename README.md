@@ -108,29 +108,31 @@ Set your error classes here. Chainable method.
 
 If `name` is a `string` then `handle` should be a function. If `handle` is not given `name` is expected to be an `object`. Sugar for this:
 
-  ```js
-    herro
-      .set('my-error', function(err){
-        err.message = ' argument `'+err.message+'` not supported';
-        return err;
-      }).set('other error', function(err){
-        err.message = ' go out and take some beers already!'
-        return err;
-      })
-
-    // the above is equivalent to
-    herro.set({
-      'my-error' : function(err){
-        err.message = ' argument `'+err.message+'` not supported';
-        return err;
-      },
-      'other error' : function(err){
-        err.message = ' go out and take some beers already!'
-        return err;
-      }
+```js
+  herro
+    .set('my-error', function(err){
+      err.message = ' argument `'+err.message+'` not supported';
+      return err;
+    }).set('other error', function(err){
+      err.message = ' go out and take some beers already!'
+      return err;
     })
 
-  ```
+  // the above is equivalent to
+  herro.set({
+    'my-error' : function(err){
+      err.message = ' argument `'+err.message+'` not supported';
+      return err;
+    },
+    'other error' : function(err){
+      err.message = ' go out and take some beers already!'
+      return err;
+    }
+  })
+
+```
+
+All classes inherit from `Herror` if you want that changed [let me know](https://github.com/stringparser/herro/issues/new).
 
 ## herro.get(name[, message])
 
