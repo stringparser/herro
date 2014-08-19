@@ -82,9 +82,9 @@ throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts')
  node@0.10.30
 ```
 
-## api
+# api
 
-#### herro.Herror
+## herro.Herror
 
 Inherits from `Error` an error class with formatted stack trace. You can call it with and without `new`.
 
@@ -100,7 +100,7 @@ Herror.apply(myTHing)
 // Both above will throw an error
 ```
 
-#### herro.set(name, handle)
+## herro.set(name, handle)
 
 Set your error classes here. Chainable method.
  - `name`: a `string` or an `object`
@@ -132,7 +132,7 @@ If `name` is a `string` then `handle` should be a function. If `handle` is not g
 
   ```
 
-#### herro.get(name[, message])
+## herro.get(name[, message])
 
 Get the `errorClass` you set with `herro.set`
 
