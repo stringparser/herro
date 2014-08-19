@@ -13,11 +13,11 @@ The aim of this project is to humanize stack traces writing package's versions a
 
 Say you have this stack.
 
-[<img src="./docs/example_stack.png" alt="center"/>](https://github.com/stringparser/runtime)
+[<img src="./docs/example_stack.png" align="center"/>](https://github.com/stringparser/runtime)
 
 What if looked like this?
 
-[<img src="./docs/example_stack2.png" alt="center"/>](https://github.com/stringparser/runtime)
+[<img src="./docs/example_stack2.png"  align="center"/>](https://github.com/stringparser/runtime)
 
  What it was done:
   - Change `node_modules/moduleName` with `moduleName@version`
