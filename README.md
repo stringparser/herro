@@ -88,7 +88,7 @@ throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts')
 
 ## herro.Herror
 
-Inherits from `Error` an error class with formatted stack trace. You can call it with and without `new`.
+Inherits from `Error`. An error class with formatted stack trace. You can call it with and without `new`.
 
 `Herror.call` or `apply` will expect you to use an `Error` instance for `this`.
 
@@ -101,7 +101,7 @@ var myThing = {};
 Herror.call(myThing)
 Herror.apply(myTHing)
 
-// Both above will throw an error
+// Both above will fail
 ```
 
 ## herro.set(name, handle)
