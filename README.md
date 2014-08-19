@@ -16,9 +16,9 @@ Say you have this stack.
 [<img src="./docs/example_stack.png" alt="center"/>](https://github.com/stringparser/runtime)
 
 What if looked like this?
-> note that instead of `node_modules/moduleName` you see `moduleName@version`
 
 [<img src="./docs/example_stack2.png" alt="center"/>](https://github.com/stringparser/runtime)
+> note that instead of `node_modules/moduleName` you see `moduleName@version`
 
 ## install
 
