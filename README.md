@@ -174,8 +174,8 @@ npm test
 
 ## todo
 
- - [ ] make more tests
- - [ ] more interfaces for error instances (like `Herror.stream` or `Herror.catch`).
+ - [ ] make more tests.
+ - [ ] more interfaces for error instances (like `Herror.stream` or `Herror.catch`) that would be helpful to have.
 
 ## license
 
