@@ -108,7 +108,11 @@ Set your error classes here. Chainable method.
  - `name`: a `string` or an `object`
  - `handle` : a `function`
 
-If `name` is a `string` then `handle` should be a function. If `handle` is not given `name` is expected to be an `object`. Sugar for this:
+The first argument passed to the *handle* is a `Herror` instance.
+
+If `name` is a `string` then `handle` should be a function. If `handle` is not given `name` is expected to be an `object`.
+
+Sugar for this:
 
 ```js
 var herro = require('herro');
