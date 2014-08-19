@@ -18,7 +18,7 @@ What if looked like this?
 
  What it was done:
   - Change `node_modules/moduleName` with `moduleName@version`
-  - Change `my-project-path` with `my-project-path@version`. That is, on the screenshot above you see [runtime@0.1.28-docs-2](https://github.com/stringparser/runtime) instead of `/home/jcm/code/herro`. If you want that changed [write](https://github.com/stringparser/herro/issues/new).
+  - Change `my-project-path` with `my-project-path@version`. That is, on the screenshot above you see [runtime@0.1.28-docs-2](https://github.com/stringparser/runtime) instead of `/home/jcm/code/runtime`. If you want that changed [write](https://github.com/stringparser/herro/issues/new).
   - Add an `arch` badge at the bottom showing what node was running when that happened.
   - Add a `source` pointing to the first ocurrence of a `node_module` on the stack.
 
