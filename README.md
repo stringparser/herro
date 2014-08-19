@@ -13,7 +13,7 @@ The aim of this project is to humanize stack traces writing package's versions a
 
 Say you have the stack trace of the left. Why shouldn't it look like what is on the right (note that instead of `node_modules/moduleName` you see `moduleName@version`)
 
-[<img src="docs/example.png" alt="center"/>](https://github.com/stringparser/runtime)
+[<img src="./docs/example.png" alt="center"/>](https://github.com/stringparser/runtime)
 
 ## license
 
