@@ -7,7 +7,7 @@
 ## herro
 > Humanize the `Error` class[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
-Wrie package's versions and names directly on the `stack` already.
+Write package's versions and names directly on the `stack` already.
 
 ## example
 
