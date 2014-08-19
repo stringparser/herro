@@ -5,7 +5,7 @@
 [<img alt="build" src="http://img.shields.io/travis/stringparser/herro/master.svg?style=flat-square" align="right"/>](https://travis-ci.org/stringparser/herro/builds)
 
 ## herro
-> Humanize the `Error` class[<img alt="progressed.io" src="http://progressed.io/bar/50" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
+> Humanize the `Error` class[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
 The aim of this project is to humanize stack traces writing package's versions and names directly on the table.
 
@@ -88,7 +88,9 @@ throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts')
 
 Inherits from `Error` an error class with formatted stack trace. You can call it with and without `new`.
 
-If you use `call` or `apply` it will spect you use an `Error` instance for `this`. That is:
+`Herror.call` or `apply` will expect you to use an `Error` instance for `this`.
+
+That is:
 
 ```js
 var herro = require('herro').Herror;
@@ -144,7 +146,7 @@ Get the `errorClass` you set with `herro.set`
 If `message` is not given returns your errorClass `name`.
 If `message` *is* given returns an error instance of that errorClass `name`.
 
-## FLAGS
+## flags
 
 Enforce all stack traces to show package versions:
 
@@ -169,6 +171,11 @@ or
 ```
 npm test
 ```
+
+## todo
+
+ - [ ] make more tests
+ - [ ] more interfaces for error instances (like `Herror.stream` or `Herror.catch`).
 
 ## license
 
