@@ -33,11 +33,3 @@ function catcher(fn){
 
   return ret;
 }
-
-herro.set('my-custom-error', function(err){
-
-  err.message = err.message + ' with orange juice please';
-  return err;
-});
-
-var myErrorClass = herro.get('my-custom-error');
