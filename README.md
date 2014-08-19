@@ -34,9 +34,9 @@ Out of the package you get a plain old `Herror` class that only takes one argume
 var Herror = require('herro').Herror;
 ```
 
-Just use it as you normally would with `Error` and you would get stack traces like above.
+Just use it as you normally would with `Error` and you'll get stack traces like above.
 
-Also, if you want to enforce *any* v8 stacktrace to have the package names and versions written there is a flag you can use for that
+Also, if you want to enforce *any* `v8` stacktrace to have the package names and versions written there is a flag you can use for that
 
 ```sh
 export ERROR_FLOOD=true node index.js
@@ -50,23 +50,22 @@ var herro = require('herro');
 herro.set('my-custom-error', function(err){
 
   err.message = error.message + ' with orange juice please';
-
   return err;
 });
 
 var myErrorClass = herror.get('my-custom-error');
 
-throw new myErrorClass('I would want coffee and toasts');
+throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts');
 // or also
-throw new herror.get('my-custom-error', 'I would want coffee and toasts')
+throw new herror.get('my-custom-error', 'Excuse me dear, I would fancy coffee and toasts')
 ```
 
 which as you would guess will `throw`
 
 ```sh
-throw new myErrorClass('I would want coffee and toasts')
+throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts')
       ^
- Error: I would want coffee and toasts with orange juice please
+ Error: Excuse me dear, I would fancy coffee and toasts with orange juice please
 
  source: herro@0.0.16/lib/herro.js:103:19
  --
