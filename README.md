@@ -38,13 +38,22 @@ var Herror = require('herro').Herror;
 
 Just use it as you normally would with `Error` and you'll get stack traces like above.
 
-Also, if you want to enforce *any* `v8` stacktrace to have the package names and versions written there is a flag you can use for that
+Also, if you want to enforce *any* `v8` stacktrace to have the package names and versions written, you just don't want to use a special error class, then, you have two options:
+
+1.- Invoke `herro#everywhere`
+
+```js
+var herro = require('herro');
+    herro.everywhere();  // no need to use the Herror classs
+```
+
+2.- Use the `flood` flag
 
 ```sh
 export ERROR_FLOOD=true
 ```
 
-Besides of the simple `Herror` class there are two methods to easily customize your errors (see the [api](#api) section below).
+In addition to the simple `Herror` class there are two methods to easily customize your errors (see the [api](#api) section below).
 
 ```js
 var herro = require('herro');
