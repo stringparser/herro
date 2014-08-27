@@ -1,11 +1,8 @@
 [<img alt="npm downloads" src="http://img.shields.io/npm/dm/herro.svg?style=flat-square" align="right"/>](http://img.shields.io/npm/dm/herro.svg)
-[<img alt="build" src="http://img.shields.io/travis/stringparser/herro/master.svg?style=flat-square" align="right"/>](https://travis-ci.org/stringparser/herro/builds)
-[<img alt="NPM version" src="http://img.shields.io/npm/v/herro.svg?style=flat-square" align="right"/>](http://www.npmjs.org/package/herro)
-
+[<img alt="build" src="http://img.shields.io/travis/stringparser/herro/master.svg?style=flat-square" align="left"/>](https://travis-ci.org/stringparser/herro/builds)
+[<img alt="NPM version" src="http://img.shields.io/npm/v/herro.svg?style=flat-square" align="left"/>](http://www.npmjs.org/package/herro)
 ### humanize the Error class
-> [install](#install) | [usage](#usage) | [api](#api) | [flags](#flags) | [tests](#tests)
-
-[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
+> [install](#install) | [usage](#usage) | [api](#api) | [flags](#flags) | [tests](#tests) [<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
 What if stack traces looked like this?
 
