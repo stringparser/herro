@@ -29,7 +29,7 @@ The package gives two flavors. One declarative and other imperative.
 
 - imperative: make it so
 
-  To enforce *any* `v8` stacktrace to have the package names and versions written, just because you don't want to use a special error class or, of course, you don't want to rewrite anything there are three options:
+  To enforce *any* `v8` stacktrace to have the package names and versions written, just because you don't want to use a special error class or, of course, you don't want to rewrite anything:
 
   **NODE_ENV = test**
 
