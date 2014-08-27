@@ -4,8 +4,7 @@
 
 ### herro[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
-> [install](#install) | [usage](#usage) | [api](#api) | [flags](#flags) | [tests](#tests)
-
+<br>
 What if stack traces looked like this?
 
 [<img src="https://raw.githubusercontent.com/stringparser/herro/master/docs/example_stack2.png"  align="center"/>](https://github.com/stringparser/runtime)
@@ -16,13 +15,17 @@ What if stack traces looked like this?
   - Add an `arch` badge at the bottom showing what node was running when that happened.
   - Add a `source` pointing to the first occurrence of a `node_module` on the stack.
 
+ - [install](#install)
+ - [usage](#usage)
+ - [api](#api)
+ - [flags](#flags)
+ - [tests](#tests)
+
 ## install
 
 ```
 npm install herro --save
 ```
-
-Thus far [`node 0.8` and above are behaving](https://travis-ci.org/stringparser/herro/builds).
 
 ## usage
 
@@ -197,6 +200,8 @@ or
 ```
 npm test
 ```
+
+Thus far [`node 0.8` and above are behaving](https://travis-ci.org/stringparser/herro/builds).
 
 ## todo
 
