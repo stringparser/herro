@@ -14,6 +14,7 @@ What if stack traces looked like this?
 |-----------------------------------------------------------------------------|
 | `node_modules/moduleName` with `moduleName@version`                         |
 | `my-project-path` with `my-project-path@version`.                           |
+|-----------------------------------------------------------------------------|
 | adds...                                                                     |
 |-----------------------------------------------------------------------------|
 | an `arch` badge for the node version of that error                          |
