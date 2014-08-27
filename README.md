@@ -3,7 +3,7 @@
 [<img alt="NPM version" src="http://img.shields.io/npm/v/herro.svg?style=flat-square" align="right"/>](http://www.npmjs.org/package/herro)
 
 ### herro[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
-Humanize the Error class
+
 > [install](#install) | [usage](#usage) | [api](#api) | [flags](#flags) | [tests](#tests)
 
 What if stack traces looked like this?
