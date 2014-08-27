@@ -11,11 +11,18 @@ What if stack traces looked like this?
 
  What it does                                                                     | Table of contents
  :--------------------------------------------------------------------------------|:------------------------
-  - `node_modules/moduleName` with `moduleName@version`                           | [install](#install)
-  - `my-project-path` with `my-project-path@version`.                             | [usage](#usage)
-  - `arch` badge for the node version of that error                               | [api](#api)
-  - `source` hint being first occurrence of a `node_module` on the stack.         | [flags](#flags)
-  Note: If `package.json` doesn't exist. Take the outer directory of your `PWD`.  | [tests](#tests)
+  - `node_modules/moduleName` with `moduleName@version`                           |
+  - `my-project-path` with `my-project-path@version`.                             |
+  - `arch` badge for the node version of that error                               |
+  - `source` hint being first occurrence of a `node_module` on the stack.         |
+  Note: If `package.json` doesn't exist. Take the outer directory of your `PWD`.  |
+
+#### table of contents
+- [install](#install)
+- [usage](#usage)
+- [api](#api)
+- [flags](#flags)
+- [tests](#tests)
 
 ## install
 
