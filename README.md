@@ -15,6 +15,7 @@ What if stack traces looked like this?
   - Add an `arch` badge at the bottom showing what node was running when that happened.
   - Add a `source` pointing to the first occurrence of a `node_module` on the stack.
 
+Table of contents:
  - [install](#install)
  - [usage](#usage)
  - [api](#api)
