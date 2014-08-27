@@ -6,6 +6,8 @@
 
 [<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
+The aim of this project is to humanize stack traces writing package's versions and names directly on the table to save up time and effort.
+
 Say you have this stack.
 
 [<img src="https://raw.githubusercontent.com/stringparser/herro/master/docs/example_stack.png" align="center"/>](https://github.com/stringparser/runtime)
