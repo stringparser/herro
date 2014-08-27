@@ -9,18 +9,13 @@ What if stack traces looked like this?
 
 [<img src="https://raw.githubusercontent.com/stringparser/herro/master/docs/example_stack2.png"  align="center"/>](https://github.com/stringparser/runtime)
 
- It changes:
-  - `node_modules/moduleName` with `moduleName@version`
-  - `my-project-path` with `my-project-path@version`. If there is no `package.json` in the root directory default to a relative path of the outer directory of your `PWD`.
-  - Add an `arch` badge at the bottom showing what node was running when that happened.
-  - Add a `source` pointing to the first occurrence of a `node_module` on the stack.
-
-Table of contents:
- - [install](#install)
- - [usage](#usage)
- - [api](#api)
- - [flags](#flags)
- - [tests](#tests)
+ What it does                                                                     | Table of contents
+ :--------------------------------------------------------------------------------|:------------------------
+  - `node_modules/moduleName` with `moduleName@version`                           | - [install](#install)
+  - `my-project-path` with `my-project-path@version`.                             | - [usage](#usage)
+  - `arch` badge at the bottom showing what node was running when that happened.  | - [api](#api)
+  - `source` hint being first occurrence of a `node_module` on the stack.         | - [flags](#flags)
+  Note: If `package.json` doesn't exist. Take the outer directory of your `PWD`.  | - [tests](#tests)
 
 ## install
 
