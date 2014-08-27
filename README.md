@@ -36,10 +36,7 @@ Options:
 
 **NODE_ENV = test**          | **`herro#everywhere`**                     | **`flood` flag**
 -----------------------------|--------------------------------------------|---------------------------
-Stack traces are "humanized" |                                            |
-for the `test` environment   |`var herro = require('herro').everywhere()` | `export ERROR_FLOOD=true`
-by default.                  |                                            | See more on this [below](#flags)
-                             |                                            |                          
+Stack traces are "humanized" for the `test` environment  by default. |`var herro = require('herro').everywhere()` | `export ERROR_FLOOD=true` 
 
 #### declarative: customize error instances
 
