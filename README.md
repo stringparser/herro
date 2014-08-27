@@ -3,16 +3,11 @@
 [<img alt="NPM version" src="http://img.shields.io/npm/v/herro.svg?style=flat-square" align="right"/>](http://www.npmjs.org/package/herro)
 
 > Humanize the `Error` class
+>  [install](#install) | [usage](#usage) | [api](#api) | [flags](#flags) | [tests](#tests)
 
 [<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
 
-The aim of this project is to humanize stack traces writing package's versions and names directly on the table to save up time and effort.
-
-Say you have this stack.
-
-[<img src="https://raw.githubusercontent.com/stringparser/herro/master/docs/example_stack.png" align="center"/>](https://github.com/stringparser/runtime)
-
-What if looked like this?
+What if stack traces looked like this?
 
 [<img src="https://raw.githubusercontent.com/stringparser/herro/master/docs/example_stack2.png"  align="center"/>](https://github.com/stringparser/runtime)
 
@@ -32,30 +27,42 @@ Thus far [`node 0.8` and above are behaving](https://travis-ci.org/stringparser/
 
 ## usage
 
-Out of the package you get a plain old `Herror` class that only takes one argument (the message to be written).
+The package gives two flavors. One declarative and other imperative.
 
-```js
-var Herror = require('herro').Herror;
-```
+- Declarative: use the Herror class.
 
-Just use it as you normally would with `Error` and you'll get stack traces like above.
+  ```js
+  var Herror = require('herro').Herror;
+  ```
 
-Also, if you want to enforce *any* `v8` stacktrace to have the package names and versions written, you just don't want to use a special error class, then, you have two options:
+  Just use it as you normally would with `Error` and you'll get stack traces like above.
 
-1.- Invoke `herro#everywhere`
+- Imperative: make it so.
 
-```js
-var herro = require('herro');
-    herro.everywhere();  // no need to use the Herror classs
-```
+  To enforce *any* `v8` stacktrace to have the package names and versions written, just because you don't want to use a special error class or, of course, you don't want to rewrite anything there are three options:
 
-2.- Use the `flood` flag
+  1.- Invoke `herro#everywhere`
 
-```sh
-export ERROR_FLOOD=true
-```
+  ```js
+  var herro = require('herro');
+      herro.everywhere();  // no need to use the Herror classs
+  ```
 
-In addition to the simple `Herror` class there are two methods to easily customize your errors (see the [api](#api) section below).
+  2.- Use the `flood` flag
+
+  ```sh
+  export ERROR_FLOOD=true
+  ```
+
+  See more on this [below](#flags)
+
+  3.- If `NODE_ENV` is `test`
+
+  For test environment all stack traces automatically will be printed like this.
+
+<hr/>
+
+There are two methods to help error customizing.
 
 ```js
 var herro = require('herro');
