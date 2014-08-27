@@ -15,7 +15,7 @@ What if stack traces looked like this?
  `node_modules/moduleName` to `moduleName@version`   | an `arch` badge with format `node@version`
  `project-path` to `project-path@version`            | a `source` being the first `node_module` encountered
 
-Note: If `package.json` doesn't exist `project-path` will be relative to the outer directory of your `PWD`. 
+Note: If `package.json` doesn't exist `project-path` will be relative to the outer directory of your `PWD`.
 
 ## install
 
@@ -27,26 +27,21 @@ npm install herro --save
 
 The package gives two flavors. One declarative and other imperative.
 
-- Declarative: use the Herror class.
-
-  ```js
-  var Herror = require('herro').Herror;
-  ```
-
-  Just use it as you normally would with `Error` and you'll get stack traces like above.
-
 - Imperative: make it so.
 
   To enforce *any* `v8` stacktrace to have the package names and versions written, just because you don't want to use a special error class or, of course, you don't want to rewrite anything there are three options:
 
-  1.- Invoke `herro#everywhere`
+  - `NODE_ENV = test`
 
+  All stack traces are "humanized" for the test environment by default.
+
+  - Call `herro#everywhere`
+  
   ```js
-  var herro = require('herro');
-      herro.everywhere();  // no need to use the Herror classs
+  var herro = require('herro').everywhere();
   ```
 
-  2.- Use the `flood` flag
+  - Use the `flood` flag
 
   ```sh
   export ERROR_FLOOD=true
@@ -54,51 +49,45 @@ The package gives two flavors. One declarative and other imperative.
 
   See more on this [below](#flags)
 
-  3.- If `NODE_ENV` is `test`
+- Declarative: customize error instances.
 
-  For test environment all stack traces automatically will be printed like this.
+  ```js
+  var herro = require('herro');
 
-<hr/>
+  herro.set('my-custom-error', function(err){
 
-There are two methods to help error customizing.
+    err.message = error.message + ' with orange juice please';
+    return err;
+  });
 
-```js
-var herro = require('herro');
+  var myErrorClass = herror.get('my-custom-error');
 
-herro.set('my-custom-error', function(err){
+  throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts');
+  // or also
+  throw new herror.get('my-custom-error', 'Excuse me dear, I would fancy coffee and toasts')
+  ```
 
-  err.message = error.message + ' with orange juice please';
-  return err;
-});
+  which as you would guess will `throw`
 
-var myErrorClass = herror.get('my-custom-error');
+  ```sh
+  throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts')
+        ^
+   Error: Excuse me dear, I would fancy coffee and toasts with orange juice please
 
-throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts');
-// or also
-throw new herror.get('my-custom-error', 'Excuse me dear, I would fancy coffee and toasts')
-```
-
-which as you would guess will `throw`
-
-```sh
-throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts')
-      ^
- Error: Excuse me dear, I would fancy coffee and toasts with orange juice please
-
- source: herro@0.0.16/lib/herro.js:103:19
- --
-    >  new errorClass (herro@0.0.16/lib/herro.js:103:19)
-   at  Object.<anonymous> (herro@0.0.16/test/test.Herror.set.js:47:7)
-   at  Module._compile (module.js:456:26)
-   at  Object.Module._extensions..js (module.js:474:10)
-   at  Module.load (module.js:356:32)
-   at  Function.Module._load (module.js:312:12)
-   at  Function.Module.runMain (module.js:497:10)
-   at  startup (node.js:119:16)
-   at  node.js:906:3
- --
- node@0.10.30
-```
+   source: herro@0.0.16/lib/herro.js:103:19
+   --
+      >  new errorClass (herro@0.0.16/lib/herro.js:103:19)
+     at  Object.<anonymous> (herro@0.0.16/test/test.Herror.set.js:47:7)
+     at  Module._compile (module.js:456:26)
+     at  Object.Module._extensions..js (module.js:474:10)
+     at  Module.load (module.js:356:32)
+     at  Function.Module._load (module.js:312:12)
+     at  Function.Module.runMain (module.js:497:10)
+     at  startup (node.js:119:16)
+     at  node.js:906:3
+   --
+   node@0.10.30
+  ```
 
 # api
 

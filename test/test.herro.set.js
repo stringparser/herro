@@ -3,7 +3,6 @@ var assert = require('assert');
 var herro = require('../.');
 
 
-
 herro.set('my-errorClass', function(err){
 
   err.message = 'something ' + err.message;
