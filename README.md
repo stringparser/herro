@@ -11,9 +11,9 @@ What if stack traces looked like this?
 
 
  changes...                                          | adds...                        |
------------------------------------------------------|----------------------------------------------------------------
+:----------------------------------------------------|:--------------------------------------------------------
  `node_modules/moduleName` with `moduleName@version` | an `arch` badge for the node version of that error
- `my-project-path` with `my-project-path@version`.   | a `source` hint of the first `node_module` encountered
+ `my-project-path` with `my-project-path@version`    | a `source` hint of the first `node_module` encountered
 
 Note: If `package.json` doesn't exist. Take the outer directory of your `PWD`.  
 
