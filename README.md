@@ -10,24 +10,12 @@ What if stack traces looked like this?
 [<img src="https://raw.githubusercontent.com/stringparser/herro/master/docs/example_stack2.png"  align="center"/>](https://github.com/stringparser/runtime)
 
 
-| changes...                                                                  |
-|-----------------------------------------------------------------------------|
-| `node_modules/moduleName` with `moduleName@version`                         |
-| `my-project-path` with `my-project-path@version`.                           |
-
-| adds...                                                                     |
-|-----------------------------------------------------------------------------|
-| an `arch` badge for the node version of that error                          |
-| a `source` hint being first occurrence of a `node_module` on the stack.     |
+ changes...                                          | adds...                        |
+-----------------------------------------------------|----------------------------------------------------------------
+ `node_modules/moduleName` with `moduleName@version` | an `arch` badge for the node version of that error
+ `my-project-path` with `my-project-path@version`.   | a `source` hint of the first `node_module` encountered
 
 Note: If `package.json` doesn't exist. Take the outer directory of your `PWD`.  
-
-#### table of contents
-- [install](#install)
-- [usage](#usage)
-- [api](#api)
-- [flags](#flags)
-- [tests](#tests)
 
 ## install
 
