@@ -30,19 +30,21 @@ The package gives two flavors. One declarative and other imperative.
 
 #### imperative: make it so
 
-To enforce *any* `v8` stacktrace to have the package names. Options:
+To enforce *any* `v8` stacktrace to have the package names.
 
-**NODE_ENV = test**
+Options:
+
+- **NODE_ENV = test**
 
 All stack traces are "humanized" for the test environment by default.
 
-**Call `herro#everywhere`**
+- **Call `herro#everywhere`**
 
 ```js
 var herro = require('herro').everywhere();
 ```
 
-**Use the `flood` flag**
+- **Use the `flood` flag**
 
 ```sh
 export ERROR_FLOOD=true
