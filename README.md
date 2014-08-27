@@ -27,21 +27,21 @@ npm install herro --save
 
 The package gives two flavors. One declarative and other imperative.
 
-- Imperative: make it so.
+- imperative: make it so
 
   To enforce *any* `v8` stacktrace to have the package names and versions written, just because you don't want to use a special error class or, of course, you don't want to rewrite anything there are three options:
 
-  - `NODE_ENV = test`
+  **NODE_ENV = test**
 
   All stack traces are "humanized" for the test environment by default.
 
-  - Call `herro#everywhere`
-  
+  **Call `herro#everywhere`**
+
   ```js
   var herro = require('herro').everywhere();
   ```
 
-  - Use the `flood` flag
+  **Use the `flood` flag**
 
   ```sh
   export ERROR_FLOOD=true
@@ -49,7 +49,7 @@ The package gives two flavors. One declarative and other imperative.
 
   See more on this [below](#flags)
 
-- Declarative: customize error instances.
+- declarative: customize error instances.
 
   ```js
   var herro = require('herro');
