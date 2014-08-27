@@ -28,67 +28,67 @@ npm install herro --save
 
 The package gives two flavors. One declarative and other imperative.
 
-- imperative: make it so
+### imperative: make it so
 
-  To enforce *any* `v8` stacktrace to have the package names and versions written, just because you don't want to use a special error class or, of course, you don't want to rewrite anything:
+To enforce *any* `v8` stacktrace to have the package names and versions written, just because you don't want to use a special error class or, of course, you don't want to rewrite anything:
 
-  **NODE_ENV = test**
+**NODE_ENV = test**
 
-  All stack traces are "humanized" for the test environment by default.
+All stack traces are "humanized" for the test environment by default.
 
-  **Call `herro#everywhere`**
+**Call `herro#everywhere`**
 
-  ```js
-  var herro = require('herro').everywhere();
-  ```
+```js
+var herro = require('herro').everywhere();
+```
 
-  **Use the `flood` flag**
+**Use the `flood` flag**
 
-  ```sh
-  export ERROR_FLOOD=true
-  ```
+```sh
+export ERROR_FLOOD=true
+```
 
-  See more on this [below](#flags)
+See more on this [below](#flags)
 
-- declarative: customize error instances.
+## declarative: customize error instances.
 
-  ```js
-  var herro = require('herro');
+```js
+var herro = require('herro');
 
-  herro.set('my-custom-error', function(err){
+herro.set('my-custom-error', function(err){
 
-    err.message = error.message + ' with orange juice please';
-    return err;
-  });
+  err.message = error.message + ' with orange juice please';
+  return err;
+});
 
-  var myErrorClass = herror.get('my-custom-error');
+var myErrorClass = herror.get('my-custom-error');
 
-  throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts');
-  // or also
-  throw new herror.get('my-custom-error', 'Excuse me dear, I would fancy coffee and toasts')
-  ```
+throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts');
+// or also
+throw new herror.get('my-custom-error', 'Excuse me dear, I would fancy coffee and toasts')
+```
 
-  which as you would guess will `throw`
+which as you would guess will `throw`
 
-  ```sh
-  throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts')
-        ^
-   Error: Excuse me dear, I would fancy coffee and toasts with orange juice please
+```sh
+throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts')
+      ^
+ Error: Excuse me dear, I would fancy coffee and toasts with orange juice please
 
-   source: herro@0.0.16/lib/herro.js:103:19
-   --
-      >  new errorClass (herro@0.0.16/lib/herro.js:103:19)
-     at  Object.<anonymous> (herro@0.0.16/test/test.Herror.set.js:47:7)
-     at  Module._compile (module.js:456:26)
-     at  Object.Module._extensions..js (module.js:474:10)
-     at  Module.load (module.js:356:32)
-     at  Function.Module._load (module.js:312:12)
-     at  Function.Module.runMain (module.js:497:10)
-     at  startup (node.js:119:16)
-     at  node.js:906:3
-   --
-   node@0.10.30
-  ```
+ source: herro@0.0.16/lib/herro.js:103:19
+ --
+    >  new errorClass (herro@0.0.16/lib/herro.js:103:19)
+   at  Object.<anonymous> (herro@0.0.16/test/test.Herror.set.js:47:7)
+   at  Module._compile (module.js:456:26)
+   at  Object.Module._extensions..js (module.js:474:10)
+   at  Module.load (module.js:356:32)
+   at  Function.Module._load (module.js:312:12)
+   at  Function.Module.runMain (module.js:497:10)
+   at  startup (node.js:119:16)
+   at  node.js:906:3
+ --
+ node@0.10.30
+```
 
 # api
 
