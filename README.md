@@ -50,7 +50,7 @@ export ERROR_FLOOD=true
 
 See more on this [below](#flags)
 
-## declarative: customize error instances.
+### declarative: customize error instances.
 
 ```js
 var herro = require('herro');
