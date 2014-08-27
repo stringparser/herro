@@ -28,7 +28,7 @@ npm install herro --save
 
 The package gives two flavors. One declarative and other imperative.
 
-### imperative: make it so
+#### imperative: make it so
 
 To enforce *any* `v8` stacktrace to have the package names and versions written, just because you don't want to use a special error class or, of course, you don't want to rewrite anything:
 
@@ -50,7 +50,7 @@ export ERROR_FLOOD=true
 
 See more on this [below](#flags)
 
-### declarative: customize error instances.
+#### declarative: customize error instances.
 
 ```js
 var herro = require('herro');
