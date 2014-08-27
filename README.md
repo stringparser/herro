@@ -9,12 +9,13 @@ What if stack traces looked like this?
 
 [<img src="https://raw.githubusercontent.com/stringparser/herro/master/docs/example_stack2.png"  align="center"/>](https://github.com/stringparser/runtime)
 
- | what does ? |
- |:-----------------------------------------------------------------------------|
- | change `node_modules/moduleName` with `moduleName@version`                   |
- | `my-project-path` with `my-project-path@version`.                            |
- | `arch` badge for the node version of that error                              |
- | `source` hint being first occurrence of a `node_module` on the stack.        |
+
+| what does ? |
+|-----------------------------------------------------------------------------|
+| change `node_modules/moduleName` with `moduleName@version`                   |
+| `my-project-path` with `my-project-path@version`.                            |
+| `arch` badge for the node version of that error                              |
+| `source` hint being first occurrence of a `node_module` on the stack.        |
 
 Note: If `package.json` doesn't exist. Take the outer directory of your `PWD`.  
 
