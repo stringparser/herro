@@ -12,7 +12,7 @@ process.stdout.write(
   'enumprops=['+enumprops + '] ; allprops=[' + allprops + '] '
 );
 
-assert( enumprops.match(/stack|message|arch/g) === null);
+assert( enumprops.match(/stack/g) === null);
 assert(  allprops.match(/stack|message|arch/g) !== null);
 
 // # inheritance
