@@ -140,6 +140,21 @@ herro.set({
 
 ```
 
+ **`Herror` instance properties**
+
+  If a `limit` property is set on the instance the stack trace limit will be   adjusted accordingly. That means:
+
+  ```js
+  herror.set('no-brainer', function(error){
+    error.limit = 0;
+  })
+  ```
+
+ will cause that error to have no stack trace.
+
+  **NOTE**: the global `Error.stackTraceLimit` is respected, just before capturing the stack trace the value is saved and before the constructor returns is restored.
+
+
 All classes inherit from `Herror` if you want that changed [let me know](https://github.com/stringparser/herro/issues/new).
 
 ## herro.get(name[, message])
