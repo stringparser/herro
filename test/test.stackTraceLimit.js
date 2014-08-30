@@ -1,15 +1,24 @@
 
 var assert = require('better-assert');
 var herro = require('../.');
-var error;
+var ErrorCtor, error;
 var NODE_ENV = process.env.NODE_ENV;
+var limit = 1;
 
-var error = new herro.Herror('Error.stackTraceLimit');
+herro.set('Error.stackTraceLimit', function(error){
+  error.limit = limit;
+});
+
+ErrorCtor = herro.get('Error.stackTraceLimit');
+error = new ErrorCtor('Custom limit');
 
 process.stdout.write(
-  ' error.stack.split(\'\\n\').length= '+error.stack.split('\n').length +
-  ' ; NODE_ENV='+NODE_ENV+' => '+Error.stackTraceLimit+' '
+  'error.limit = '+limit+' ; '+
+  'error.stack.length = '+(error.stack.split('\n').length-7) + ' ; '+
+  'NODE_ENV='+NODE_ENV+' => stackTraceLimit: '+Error.stackTraceLimit+' '
 );
 
 if( NODE_ENV === 'test' )
   assert( Error.stackTraceLimit === Infinity );
+else
+  assert( (error.stack.split('\n').length-7) === limit );
