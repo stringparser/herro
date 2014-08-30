@@ -36,7 +36,7 @@ Options:
 
 **NODE_ENV = test**                      | **`herro#everywhere`**         | **`flood` flag**
 -----------------------------------------|--------------------------------|---------------------------
-All stack traces default to this format.<br>Also changes `Error.stackTraceLimit = Inifinity`.<br>Remember, only for `test` environment  | `require('herro').everywhere()` | `export ERROR_FLOOD=true` 
+All stack traces default to this format.<br>Also changes `Error.stackTraceLimit = Inifinity`.<br>Remember, only for `test` environment  | `require('herro').everywhere()` | `export ERROR_FLOOD=true`
 
 #### declarative: customize error instances
 
@@ -116,21 +116,18 @@ var herro = require('herro');
 herro
   .set('my-error', function(err){
     err.message = ' argument `'+err.message+'` not supported';
-    return err;
-  }).set('other error', function(err){
+  })
+  .set('other error', function(err){
     err.message = ' go out and take some beers already!'
-    return err;
   })
 
 // the above is equivalent to
 herro.set({
   'my-error' : function(err){
     err.message = ' argument `'+err.message+'` not supported';
-    return err;
   },
   'other error' : function(err){
     err.message = ' go out and take some beers already!'
-    return err;
   }
 })
 
