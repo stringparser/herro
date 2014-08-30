@@ -1,6 +1,6 @@
 {
   "name": "herro",
-  "version": "0.1.25",
+  "version": "0.1.27",
   "description": "humanize the error class",
   "author": "Javier Carrillo <stringparser@gmail.com> (http://www.stringparser.com)",
   "main": "./index.js",
@@ -20,5 +20,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/stringparser/herro"
+  },
+  "dependencies": {
+    "better-assert": "^1.0.1"
   }
 }
