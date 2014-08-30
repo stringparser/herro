@@ -5,11 +5,10 @@ var Herror = herro.Herror;
 var error = new Herror('Let\'s go!');
 
 // # props
-var enumprops = Object.keys(error).join(',');
 var allprops = Object.getOwnPropertyNames(error).join(',');
 
 process.stdout.write(
-  'enumprops=['+enumprops + '] ; allprops=[' + allprops + '] '
+  'allprops=[' + allprops + '] '
 );
 
 assert(  allprops.match(/stack|message|arch/g) !== null);
