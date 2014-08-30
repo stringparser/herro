@@ -96,6 +96,13 @@ Herror.call(myThing)
 Herror.apply(myTHing)
 
 // Both above will fail
+// The one below will not
+
+try {
+  myThing.cuts.diamonds
+} catch(err){
+  throw Herror.call(err);
+}
 ```
 
 ## herro.set(name, handle)
