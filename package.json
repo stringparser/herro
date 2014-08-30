@@ -1,6 +1,6 @@
 {
   "name": "herro",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "description": "humanize the error class",
   "author": "Javier Carrillo <stringparser@gmail.com> (http://www.stringparser.com)",
   "main": "./index.js",
