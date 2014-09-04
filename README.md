@@ -36,7 +36,8 @@ Options:
 
 **NODE_ENV = test**                      | **`herro#everywhere`**
 -----------------------------------------|--------------------------------
-All stack traces default to this format. | `require('herro').everywhere()`
+Stack traces default to this format.     | `require('herro').everywhere()`
+Sets `Error.stackTraceLimit = Infinity`  | 
 
 #### declarative: customize error instances
 
@@ -152,10 +153,9 @@ herro.set({
 
  will cause that error to have no stack trace.
 
-  **NOTE**: the global `Error.stackTraceLimit` is respected, just before capturing the stack trace the value is saved and before the constructor returns is restored.
-
-
 All classes inherit from `Herror` if you want that changed [let me know](https://github.com/stringparser/herro/issues/new).
+
+**NOTE**: the global `Error.stackTraceLimit` is respected, just before capturing the stack trace the value is saved and before the constructor returns is restored.
 
 ## herro.get(name[, message])
 
