@@ -34,9 +34,9 @@ To enforce *any* `v8` stacktrace to have the package names.
 
 Options:
 
-**NODE_ENV = test**                      | **`herro#everywhere`**         | **`flood` flag**
------------------------------------------|--------------------------------|---------------------------
-All stack traces default to this format.<br>Also changes `Error.stackTraceLimit = Inifinity`.<br>Remember, only for `test` environment  | `require('herro').everywhere()` | `export ERROR_FLOOD=true`
+**NODE_ENV = test**                      | **`herro#everywhere`**
+-----------------------------------------|--------------------------------
+All stack traces default to this format. | `require('herro').everywhere()`
 
 #### declarative: customize error instances
 
