@@ -168,20 +168,6 @@ If `message` is not given returns your errorClass `name`.
 
 If `message` *is* given returns an error instance of that errorClass `name` with that `message`.
 
-## flags
-
-Enforce all stack traces to show package versions:
-
-```sh
-export ERROR_FLOOD=true && node index.js
-```
-
-Shut up all the way down
-```sh
-export NO_FLAGS && node index.js
-```
-The above in case anyone left `process.env.ERROR_FLOOD = true` written somewhere.
-
 ## tests
 
   $ make test
