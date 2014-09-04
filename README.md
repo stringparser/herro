@@ -184,17 +184,11 @@ The above in case anyone left `process.env.ERROR_FLOOD = true` written somewhere
 
 ## tests
 
-```sh
-make test
-```
+  $ make test
 
 or
 
-```
-npm test
-```
-
-Thus far [`node 0.8` and above are behaving](https://travis-ci.org/stringparser/herro/builds).
+  $ npm test
 
 ## todo
 
