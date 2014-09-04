@@ -37,7 +37,7 @@ Options:
 **NODE_ENV = test**                      | **`herro#everywhere`**
 -----------------------------------------|--------------------------------
 Stack traces default to this format.     | `require('herro').everywhere()`
-Sets `Error.stackTraceLimit = Infinity`  | 
+Sets `Error.stackTraceLimit = Infinity`  |
 
 #### declarative: customize error instances
 
@@ -170,11 +170,7 @@ If `message` *is* given returns an error instance of that errorClass `name` with
 
 ## tests
 
-  $ make test
-
-or
-
-  $ npm test
+`make test` or `npm test`
 
 ## todo
 
