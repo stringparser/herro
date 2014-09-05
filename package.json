@@ -21,7 +21,7 @@
     "type": "git",
     "url": "https://github.com/stringparser/herro"
   },
-  "dependencies": {
+  "devDependencies": {
     "better-assert": "^1.0.1"
   }
 }
