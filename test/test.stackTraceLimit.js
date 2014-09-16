@@ -1,9 +1,10 @@
+'use strict';
 
 var assert = require('better-assert');
 var herro = require('../.');
 var ErrorCtor, error;
 var NODE_ENV = process.env.NODE_ENV;
-var limit = 1;
+var limit = 2;
 
 herro.set('Error.stackTraceLimit', function(error){
   error.limit = limit;
@@ -18,7 +19,8 @@ process.stdout.write(
   'NODE_ENV='+NODE_ENV+' => stackTraceLimit: '+Error.stackTraceLimit+' '
 );
 
-if( NODE_ENV === 'test' )
+if( NODE_ENV === 'test' ){
   assert( Error.stackTraceLimit === Infinity );
-else
+} else {
   assert( (error.stack.split('\n').length-7) === limit );
+}
