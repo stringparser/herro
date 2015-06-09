@@ -8,7 +8,7 @@
 
 What if stack traces looked like this?
 
-[<img src="https://raw.githubusercontent.com/stringparser/herro/master/docs/example_stack2.png"  align="center"/>](https://github.com/stringparser/runtime)
+<!-- Give a snapshot sample here -->
 
 
  changes...                                          | adds...                        |
