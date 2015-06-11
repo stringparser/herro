@@ -1,6 +1,12 @@
 'use strict';
 
-var Herror = require('./.');
-var error = new Herror('something happened');
-var stack = error.stack;
+var util = require('./lib/util');
+
+var pwd = process.cwd();
+var stack = util.npmize(
+  pwd + '/node_modules/mocha/node_modules/commander/index.js\n' +
+  pwd + '/node_modules/jshint/node_modules/lodash/index.js'
+);
+
+console.log('stack');
 console.log(stack);
