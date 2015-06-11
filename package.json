@@ -5,7 +5,8 @@
   "author": "Javier Carrillo <stringparser@gmail.com> (http://www.stringparser.com)",
   "main": "./index.js",
   "scripts": {
-    "test": "make test"
+    "lint": "jshint lib index.js --exclude node_modules",
+    "test": "npm run-script lint && mocha"
   },
   "keywords": [
     "error",
