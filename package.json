@@ -6,7 +6,7 @@
   "main": "./index.js",
   "scripts": {
     "lint": "jshint lib index.js --exclude node_modules",
-    "test": "npm run-script lint && mocha"
+    "test": "npm run-script lint && mocha test/_main.js"
   },
   "keywords": [
     "error",
