@@ -63,7 +63,7 @@ var prepare = Error.prepareStackTrace;
 
 exports.global = function(flag){
   flag = flag === void 0 || Boolean(flag);
-  if(flag === false){ return (Error.prepareStackTrace = prepare); }
+  if(!flag){ return (Error.prepareStackTrace = prepare); }
 
   Error.prepareStackTrace = function(err, stack){
     return (
