@@ -2,23 +2,74 @@
 
 var util = require('./lib/util');
 
+exports = module.exports = {};
 
-function Herror(message){
+/*
+### Herror
+```js
+function Herror(String message)
+```
+`Error` class with a `<module>@<version>` formatted stack trace
+ instead of `node_modules/<module>`. inherits from the Error class.
+
+_arguments_
+ - `message` type string message for the error
+
+_returns_
+ - a new `error` instance
+
+#### usage
+```js
+var Herror = require('herro').Herror;
+
+if('something broke'){
+  throw new Herror('why did you put an egg on the microwave!');
+}
+```
+*/
+
+exports.Herror = function Herror(message){
   if(!(this instanceof Herror)){
     return new Herror(message);
   }
 
-  this.cwd = process.cwd();
-  this.date = new Date().toISOString();
-  this.engine = 'node-' + process.version;
   this.message = message;
-
   Error.captureStackTrace(this,  Herror);
+  this.stack = util.formatStack(this.stack);
+};
+util.inherits(exports.Herror, Error);
 
-  this.stack = 'cwd ' + this.cwd +
-    '\n\n' + util.npmize(this.stack) +
-    '\n\n' + this.engine + ' ' + this.date;
-}
-util.inherits(Herror, Error);
+/*
+### global
+```js
+function global(Boolean flag)
+```
 
-exports = module.exports = Herror;
+If `flag` is truthy or `undefined`, it will make all stack traces
+have `<module>@<version>` instead of `node_modules/<module>`.
+
+If `flag` is flasy it will revert stack traces to their original
+default format.
+
+#### usage
+```js
+var herro = require('herro');
+
+herro.global(); // make it global
+herro.global(false); // go back to the normal stack format
+```
+*/
+
+var prepare = Error.prepareStackTrace;
+
+exports.global = function(flag){
+  flag = flag === void 0 || Boolean(flag);
+  if(flag === false){ return (Error.prepareStackTrace = prepare); }
+
+  Error.prepareStackTrace = function(err, stack){
+    return (
+      'Error:' + err.message + '\n' +
+      util.formatStack(stack.join('\n   at  '))
+    );
+  };
+};
