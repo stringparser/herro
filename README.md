@@ -1,187 +1,92 @@
-[<img alt="npm downloads" src="http://img.shields.io/npm/dm/herro.svg?style=flat-square" align="right"/>](http://img.shields.io/npm/dm/herro.svg)
+### herro! [<img alt="npm downloads" src="http://img.shields.io/npm/dm/herro.svg?style=flat-square" align="right"/>](http://img.shields.io/npm/dm/herro.svg)
 [<img alt="build" src="http://img.shields.io/travis/stringparser/herro/master.svg?style=flat-square" align="right"/>](https://travis-ci.org/stringparser/herro/builds)
 [<img alt="NPM version" src="http://img.shields.io/npm/v/herro.svg?style=flat-square" align="right"/>](http://www.npmjs.org/package/herro)
 
-### herro!
-
-[<img alt="progressed.io" src="http://progressed.io/bar/75" align="right"/>](https://github.com/fehmicansaglam/progressed.io)
-
 What if stack traces looked like this?
 
-<!-- Give a snapshot sample here -->
-
-
- changes...                                          | adds...                        |
-:----------------------------------------------------|:--------------------------------------------------------
- `node_modules/moduleName` to `moduleName@version`   | an `arch` badge with format `node@version`
- `project-path` to `project-path@version`            | a `source` being the first `node_module` encountered
-
-Note: If `package.json` doesn't exist `project-path` will be relative to the outer directory of your `PWD`.
-
-## install
-
-```
-npm install herro --save
-```
-
-## usage
-
-The package gives two flavors. One declarative and other imperative.
-
-#### imperative: make it so
-
-To enforce *any* `v8` stacktrace to have the package names.
-
-Options:
-
-**NODE_ENV = test**                      | **`herro#everywhere`**
------------------------------------------|--------------------------------
-Stack traces default to this format.     | `require('herro').everywhere()`
-Sets `Error.stackTraceLimit = Infinity`  |
-
-#### declarative: customize error instances
-
-```js
-var herro = require('herro');
-
-herro.set('my-custom-error', function(err){
-
-  err.message = error.message + ' with orange juice please';
-  return err;
-});
-
-var myErrorClass = herror.get('my-custom-error');
-
-throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts');
-// or also
-throw new herror.get('my-custom-error', 'Excuse me dear, I would fancy coffee and toasts')
-```
-
-which as you would guess will `throw`
-
 ```sh
-throw new myErrorClass('Excuse me dear, I would fancy coffee and toasts')
-      ^
- Error: Excuse me dear, I would fancy coffee and toasts with orange juice please
-
- source: herro@0.0.16/lib/herro.js:103:19
- --
-    >  new errorClass (herro@0.0.16/lib/herro.js:103:19)
-   at  Object.<anonymous> (herro@0.0.16/test/test.Herror.set.js:47:7)
-   at  Module._compile (module.js:456:26)
-   at  Object.Module._extensions..js (module.js:474:10)
-   at  Module.load (module.js:356:32)
-   at  Function.Module._load (module.js:312:12)
-   at  Function.Module.runMain (module.js:497:10)
-   at  startup (node.js:119:16)
-   at  node.js:906:3
- --
- node@0.10.30
+Error: something broke
+    at Context.<anonymous> (./test/Herror.js:9:17)
+    at callFn (mocha@2.2.5/lib/runnable.js:266:21)
+    at Test.Runnable.run (mocha@2.2.5/lib/runnable.js:259:7)
+    at Runner.runTest (mocha@2.2.5/lib/runner.js:390:10)
+    at mocha@2.2.5/lib/runner.js:473:12
+    at next (mocha@2.2.5/lib/runner.js:315:14)
+    at mocha@2.2.5/lib/runner.js:325:7
+    at next (mocha@2.2.5/lib/runner.js:260:23)
+    at Immediate._onImmediate (mocha@2.2.5/lib/runner.js:292:5)
+    at processImmediate [as _immediateCallback] (timers.js:369:17)
+--
+cwd /Users/stringparser/code/herro
+node-v1.5.0 2015-06-14T16:09:05.544Z
 ```
+Changes paths that have
+ - The current working directory with `.`
+ - `node_modules/<module>` with `<module>@<version>`
 
-# api
+Adds a footer with
+ - An ISO date
+ - The current working directory
+ - The node version the `error` was thrown from
 
-## herro.Herror
+## api
 
-Inherits from `Error`. An error class with formatted stack trace. You can call it with and without `new`.
+The `module.exports` two functions
 
-`Herror.call` or `apply` will expect you to use an `Error` instance for `this`.
-
-That is:
-
+### Herror
 ```js
-var herro = require('herro').Herror;
-var myThing = {};
+function Herror(String message)
+```
+`Error` class with a `<module>@<version>` formatted stack trace
+ instead of `node_modules/module`. inherits from the Error class.
 
-Herror.call(myThing)
-Herror.apply(myTHing)
+arguments
+ - `message` type string message for the error
 
-// Both above will fail
-// The one below will not
+returns
+ - a new `error` instance
 
-try {
-  myThing.cuts.diamonds
-} catch(err){
-  throw Herror.call(err);
+#### usage
+```js
+var Herror = require('herro').Herror;
+
+if('something broke'){
+ throw new Herror('oh, no, you didn\'t!');
 }
 ```
 
-## herro.set(name, handle)
+### global
+```js
+function global(Boolean flag)
+```
 
-Set your error classes here. Chainable method.
- - `name`: a `string` or an `object`
- - `handle` : a `function`
+If `flag` is truthy or `undefined`, it will make all stack traces
+have `<module>@<version>` instead of `node_modules/<module>`.
 
-The first argument passed to the *handle* is a `Herror` instance.
+If `flag` is flasy it will revert stack traces to their original
+default format.
 
-If `name` is a `string` then `handle` should be a function. If `handle` is not given `name` is expected to be an `object`.
-
-Sugar for this:
-
+#### usage
 ```js
 var herro = require('herro');
 
-herro
-  .set('my-error', function(err){
-    err.message = ' argument `'+err.message+'` not supported';
-  })
-  .set('other error', function(err){
-    err.message = ' go out and take some beers already!'
-  })
-
-// the above is equivalent to
-herro.set({
-  'my-error' : function(err){
-    err.message = ' argument `'+err.message+'` not supported';
-  },
-  'other error' : function(err){
-    err.message = ' go out and take some beers already!'
-  }
-})
-
+herro.global(); // make it global
+herro.global(false); // go back to the normal stack format
 ```
 
- **`Herror` instance properties**
+## install
 
-  If a `limit` property is set on the instance the stack trace limit will be   adjusted accordingly. That means:
+With [npm](https://www.npmjs.com)
 
-  ```js
-  herror.set('no-brainer', function(error){
-    error.limit = 0;
-  })
-  ```
+```
+npm install herro
+```
 
- will cause that error to have no stack trace.
+## test
 
-All classes inherit from `Herror` if you want that changed [let me know](https://github.com/stringparser/herro/issues/new).
-
-**NOTE**: the global `Error.stackTraceLimit` is respected, just before capturing the stack trace the value is saved and before the constructor returns is restored.
-
-## herro.get(name[, message])
-
-Get the `errorClass` you set with `herro.set`
-
-  - `name`: a `string`
-  - `message`: optional `string` message.
-
-If `message` is not given returns your errorClass `name`.
-
-If `message` *is* given returns an error instance of that errorClass `name` with that `message`.
-
-## tests
-
-`make test` or `npm test`
-
-## todo
-
- - [ ] make more tests.
- - [ ] more interfaces for error instances (like `Herror.stream` or `Herror.catch`) that would be helpful to have.
-
-### stats
-
-[<img src="https://nodei.co/npm/herro.png?downloads=true&downloadRank=true&stars=true" alt="NPM" align="center"/>](https://nodei.co/npm/herro)
-
-[<img src="https://nodei.co/npm-dl/herro.png" alt="NPM" align="center"/>](https://nodei.co/npm/herro/)
+```
+$ npm test
+```
 
 ## license
 
