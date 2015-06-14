@@ -23,7 +23,7 @@ _returns_
 var Herror = require('herro').Herror;
 
 if('something broke'){
-  throw new Herror('why did you put an egg on the microwave!');
+  throw new Herror('oh, no, you did not!');
 }
 ```
 */
@@ -48,8 +48,7 @@ function global(Boolean flag)
 If `flag` is truthy or `undefined`, it will make all stack traces
 have `<module>@<version>` instead of `node_modules/<module>`.
 
-If `flag` is flasy it will revert stack traces to their original
-default format.
+If `flag` is flasy it will revert stacktrace to their default format.
 
 #### usage
 ```js

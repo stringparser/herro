@@ -25,16 +25,15 @@ Changes paths that have
  - `node_modules/<module>` with `<module>@<version>`
 
 Adds a footer with
- - An ISO date
  - The current working directory
- - The node version the `error` was thrown from
+ - An ISO date and node version from were `error` was thrown
 
 ## api
 ```js
 var herro = require('herro');
 ```
 
-The `module.exports` are two functions
+The `module.exports` two functions
  - `herro.Herror`
  - `herro.global`
 
@@ -42,21 +41,21 @@ The `module.exports` are two functions
 ```js
 function Herror(String message)
 ```
-`Error` class with a `<module>@<version>` formatted stack trace
- instead of `node_modules/module`. inherits from the Error class.
+`Error` class with paths on its stack trace as `<module>@<version>`
+instead of `node_modules/<module>`. Inherits from the Error class.
 
-arguments
- - `message` type string message for the error
+_arguments_
+- `message` type string message for the error
 
-returns
- - a new `error` instance
+_returns_
+- a new `error` instance
 
 #### usage
 ```js
 var Herror = require('herro').Herror;
 
 if('something broke'){
- throw new Herror('oh, no, you didn\'t!');
+ throw new Herror('oh, no, you did not!');
 }
 ```
 
@@ -68,8 +67,7 @@ function global(Boolean flag)
 If `flag` is truthy or `undefined`, it will make all stack traces
 have `<module>@<version>` instead of `node_modules/<module>`.
 
-If `flag` is flasy it will revert stack traces to their original
-default format.
+If `flag` is flasy it will revert stacktraces to their default format.
 
 #### usage
 ```js
