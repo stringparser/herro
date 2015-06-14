@@ -9,8 +9,8 @@ exports = module.exports = {};
 ```js
 function Herror(String message)
 ```
-`Error` class with a `<module>@<version>` formatted stack trace
- instead of `node_modules/<module>`. inherits from the Error class.
+`Error` class with paths on its stack trace as `<module>@<version>`
+instead of `node_modules/<module>`. Inherits from the Error class.
 
 _arguments_
  - `message` type string message for the error
