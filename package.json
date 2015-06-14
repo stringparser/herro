@@ -1,7 +1,7 @@
 {
   "name": "herro",
-  "version": "0.1.46",
-  "description": "humanize the error class",
+  "version": "0.2.0",
+  "description": "humanized stack traces for the error class",
   "author": "Javier Carrillo <stringparser@gmail.com> (http://www.stringparser.com)",
   "main": "./index.js",
   "scripts": {
@@ -11,11 +11,12 @@
   "keywords": [
     "error",
     "errors",
-    "custom",
     "stack",
     "trace",
+    "npmize",
     "stacktrace",
-    "v8"
+    "version",
+    "debug"
   ],
   "license": "MIT",
   "repository": {
@@ -24,8 +25,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "jshint": "^2.8.0",
-    "mocha": "^2.2.5",
-    "should": "^6.0.3"
+    "jshint": "*",
+    "mocha": "*",
+    "should": "*"
   }
 }
