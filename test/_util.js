@@ -18,14 +18,19 @@ Object.keys(devDep).forEach(function(dep){
 module.exports = {
   lib: require('../lib/util'),
   suite: function(){
+    var last = ['global.js'];
     var first = [ ];
 
     return first.concat(
       fs.readdirSync(__dirname).filter(function(file){
         if(/^_/.test(file)){ return false; }
-        return path.extname(file) && first.indexOf(file) < 0;
+        return (
+          path.extname(file) &&
+          last.indexOf(file) < 0 &&
+          first.indexOf(file) < 0
+        );
       })
-    );
+    ).concat(last);
   },
   devDep: devDep
 };

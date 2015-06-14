@@ -3,7 +3,7 @@
 var path = require('path');
 var should = require('should');
 
-module.exports = function(Herror, util){
+module.exports = function(herro, util){
   should.exist(util);
 
   var cwd = process.cwd();
