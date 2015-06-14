@@ -42,7 +42,7 @@ The `module.exports` two functions
 function Herror(String message)
 ```
 `Error` class with paths on its stack trace as `<module>@<version>`
-instead of `node_modules/<module>`. Inherits from the Error class.
+instead of `node_modules/<module>`. Inherits from the `Error` class.
 
 _arguments_
 - `message` type string message for the error
@@ -61,13 +61,11 @@ if('something broke'){
 
 ### global
 ```js
-function global(Boolean flag)
+function global([Boolean flag])
 ```
 
 If `flag` is truthy or `undefined`, it will make all stack traces
-have `<module>@<version>` instead of `node_modules/<module>`.
-
-If `flag` is flasy it will revert stacktraces to their default format.
+have `<module>@<version>` instead of `node_modules/<module>`. If `flag` is falsy it will revert stacktraces to their default format.
 
 #### usage
 ```js
