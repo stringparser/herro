@@ -30,8 +30,13 @@ Adds a footer with
  - The node version the `error` was thrown from
 
 ## api
+```js
+var herro = require('herro');
+```
 
-The `module.exports` two functions
+The `module.exports` are two functions
+ - `herro.Herror`
+ - `herro.global`
 
 ### Herror
 ```js
