@@ -9,6 +9,7 @@ module.exports = function(herro, util){
     herro.global();
     var stack = new Error('ups I did it again').stack;
     var badge = 'mocha@' + util.devDep.mocha.version;
+    stack.match(badge)[0].should.be.eql(badge);
   });
 
   it('global(falsy) brings back default format', function(){
