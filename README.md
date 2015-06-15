@@ -86,7 +86,23 @@ npm install herro
 ## test
 
 ```
-$ npm test
+herro (master) ✔ npm test
+
+herro
+  Herror
+    ✓ should format stack traces
+    ✓ should have an ISO date string
+    ✓ should have the current node version
+    ✓ should have the current working directory
+  npmize
+    ✓ CWD/node_modules/module/file.js into module@version
+    ✓ CWD/node_modules/m1/node_modules/m2/file.js into m1@version/m2@version2
+  global
+    ✓ global(truthy || undefined) npmizes stacks
+    ✓ global(falsy) brings back default format
+
+
+8 passing (21ms)
 ```
 
 ## license
