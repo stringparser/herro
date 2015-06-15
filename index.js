@@ -42,13 +42,12 @@ util.inherits(exports.Herror, Error);
 /*
 ### global
 ```js
-function global(Boolean flag)
+function global([Boolean flag])
 ```
 
 If `flag` is truthy or `undefined`, it will make all stack traces
-have `<module>@<version>` instead of `node_modules/<module>`.
-
-If `flag` is flasy it will revert stacktrace to their default format.
+have `<module>@<version>` instead of `node_modules/<module>`. If `flag` is
+falsy it will revert stacktraces to their default format.
 
 #### usage
 ```js
@@ -62,13 +61,12 @@ herro.global(false); // go back to the normal stack format
 var prepare = Error.prepareStackTrace;
 
 exports.global = function(flag){
-  flag = flag === void 0 || Boolean(flag);
-  if(!flag){ return (Error.prepareStackTrace = prepare); }
-
-  Error.prepareStackTrace = function(err, stack){
-    return (
-      'Error:' + err.message + '\n' +
-      util.formatStack(stack.join('\n   at  '))
-    );
-  };
+  if(flag === void 0 || Boolean(flag)){
+    Error.prepareStackTrace = function(err, stack){
+      return (
+        'Error:' + err.message + '\n' +
+        util.formatStack(stack.join('\n   at  '))
+      );
+    };
+  } else { Error.prepareStackTrace = prepare; }
 };
