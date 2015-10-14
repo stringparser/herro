@@ -34,7 +34,7 @@ exports.Herror = function Herror(message){
   }
 
   this.message = message;
-  Error.captureStackTrace(this,  Herror);
+  Error.captureStackTrace(this, Herror);
   this.stack = util.formatStack(this.stack);
 };
 util.inherits(exports.Herror, Error);
