@@ -107,7 +107,7 @@ herro
 
 ## license
 
-[![LICENSE][http://img.shields.io/npm/l/herro.svg?style=flat-square]](http://opensource.org/licenses/MIT)
+[![LICENSE](http://img.shields.io/npm/l/herro.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 <!-- links, etc -->
 
