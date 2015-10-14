@@ -1,6 +1,6 @@
-# herro! [<img alt="npm downloads" src="http://img.shields.io/npm/dm/herro.svg?style=flat-square" align="right"/>](http://img.shields.io/npm/dm/herro.svg)
-[<img alt="build" src="http://img.shields.io/travis/stringparser/herro/master.svg?style=flat-square" align="right"/>](https://travis-ci.org/stringparser/herro/builds)
-[<img alt="NPM version" src="http://img.shields.io/npm/v/herro.svg?style=flat-square" align="right"/>](http://www.npmjs.org/package/herro)
+# herro! [![NPM version][badge-npm]][link-npm][![npm downloads][badge-donwloads]][link-npm]
+
+[![Build][badge-build]][link-build]
 
 What if stack traces looked like this?
 
@@ -107,4 +107,13 @@ herro
 
 ## license
 
-[<img alt="LICENSE" src="http://img.shields.io/npm/l/herro.svg?style=flat-square"/>](http://opensource.org/licenses/MIT)
+[![LICENSE][http://img.shields.io/npm/l/herro.svg?style=flat-square]](http://opensource.org/licenses/MIT)
+
+<!-- links, etc -->
+
+[link-npm]: http://www.npmjs.org/package/herro
+[link-build]: https://travis-ci.org/stringparser/herro/builds
+
+[badge-npm]: http://img.shields.io/npm/v/herro.svg?style=flat-square
+[badge-build]: http://img.shields.io/travis/stringparser/herro/master.svg?style=flat-square
+[badge-donwloads]: http://img.shields.io/npm/dm/herro.svg?style=flat-square
