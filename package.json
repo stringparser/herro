@@ -1,6 +1,6 @@
 {
   "name": "herro",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "humanized stack traces for the error class",
   "author": "Javier Carrillo <stringparser@gmail.com> (http://www.stringparser.com)",
   "main": "./index.js",
